@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CT Game Lab — Petualangan Berpikir Komputasional untuk Informatika SMA Kelas X.">
+  <title>CT INTERAKTIF MEDIA | Petualangan Berpikir Komputasional</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand-group">
+      <!-- Container Logo Lembaga: Placeholder Logo UNY & Logo PPG (Ganti file asli di sini) -->
+      <div class="institution-logos" id="institutionLogos">
+        <!-- Placeholder / Logo Resmi UNY (Referensi: assets/uny-logo.png atau assets/uny-logo.jpg) -->
+        <img src="assets/uny-logo.jpg" onerror="this.onerror=null; this.src='assets/uny-logo.png';"
+          alt="Logo Universitas Negeri Yogyakarta" class="header-logo logo-uny" title="Universitas Negeri Yogyakarta">
+        <!-- Placeholder / Logo Resmi PPG (Referensi: assets/ppg-logo.png atau assets/ppg-logo.jpg) -->
+        <img src="assets/ppg-logo.jpg" onerror="this.onerror=null; this.src='assets/ppg-logo.png';"
+          alt="Logo Pendidikan Profesi Guru" class="header-logo logo-ppg" title="Pendidikan Profesi Guru">
+      </div>
+      <a class="brand" href="#beranda" id="brandLink" title="Ke Beranda CT Game Lab">
+        <span class="brand-mark">CT</span>
+        <span class="brand-name">CT <b>GAME LAB</b></span>
+      </a>
+    </div>
+
+
+    <nav id="nav" aria-label="Navigasi Utama">
+      <a href="#beranda" class="nav-link" data-page="beranda">Beranda</a>
+
+      <a href="#orientasi" class="nav-link" data-page="orientasi">
+        Orientasi Masalah
+      </a>
+
+      <a href="#materi" class="nav-link" data-page="materi">
+        Materi
+      </a>
+
+      <a href="#asesmen" class="nav-link" data-page="asesmen" id="navLinkAsesmen">
+        <span class="nav-lock-icon" id="navLockIcon"><svg class="ui-icon nav-lock-svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg></span> Asesmen
+      </a>
+
+      <a href="#refleksi" class="nav-link" data-page="refleksi">
+        Refleksi
+      </a>
+
+      <a href="#tentang" class="nav-link" data-page="tentang">
+        Tentang Media
+      </a>
+    </nav>
+
+    <!-- Profil Siswa pada Navbar (Panel 1 & 3) -->
+    <div class="user-nav-profile" id="userNavProfile" style="display: none;">
+      <div class="user-profile-badge">
+        <span class="user-avatar-icon">
+          <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </span>
+        <span class="user-profile-info" id="userProfileInfo">Nama (Kelas)</span>
+      </div>
+      <button type="button" class="btn-change-student" id="changeStudentBtn" title="Ganti data identitas siswa">Ganti
+        Siswa</button>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi">
+      <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+  </header>
+
+  <main>
+    <!-- ========================================================
+       HALAMAN 1: MATERI (DENGAN HERO SECTION & 4 SUBBAB TAB)
+       ======================================================== -->
+    <div class="page-view active" id="page-beranda">
+      <!-- HERO SECTION BERANDA (STORYBOARD PANEL 1) -->
+      <section class="hero" id="beranda">
+        <!-- Lapisan foto & overlay warna futuristik -->
+        <div class="hero-overlay"></div>
+
+        <div class="hero-container">
+          <div class="hero-copy">
+            <span class="hero-badge">INFORMATIKA • SMA KELAS X • FASE E</span>
+            <h1 class="hero-title">COMPUTATIONAL<br> THINKING</h1>
+            <p class="hero-desc">Petualangan memahami masalah dan menyusun solusi secara sistematis.</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-hero-primary" href="#materi" id="heroStartBtn">
+                <span>Mulai Membaca Materi</span>
+                <span class="btn-arrow">→</span>
+              </a>
+              <a class="btn btn-hero-ghost" href="#flowchart" id="heroFlowchartBtn">
+                <span>Mulai Menyusun Flowchart</span>
+                <span class="btn-arrow">→</span>
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat-card">
+                <b class="stat-number">04</b>
+                <span class="stat-label">Fondasi CT</span>
+              </div>
+              <div class="hero-stat-card">
+                <b class="stat-number">01</b>
+                <span class="stat-label">Studi Kasus</span>
+              </div>
+              <div class="hero-stat-card">
+                <b class="stat-number">∞</b>
+                <span class="stat-label">Cara Memperbaiki</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-art">
+            <div class="hero-illustration-card">
+              <div class="hero-screen-glow"></div>
+              <img src="assets/hero-img.png" alt="Maskot Robot CT Game Lab" class="hero-side-img">
+              <div class="hero-floating-badge">
+                <span class="floating-badge-dot"></span>
+                <span>CT Game Lab Assistant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =====================================================
+     MISI 01: ORIENTASI MASALAH DAN LKPD
+     ===================================================== -->
+    <div class="page-view" id="page-orientasi">
+      <section class="mission-section" id="misi-pemecahan-masalah">
+        <div class="mission-container">
+
+          <!-- Judul misi -->
+          <div class="mission-heading">
+            <span class="mission-eyebrow">MISI 01 · ORIENTASI MASALAH</span>
+            <h2>Selamatkan Antrean Kantin!</h2>
+            <p>
+              Amati permasalahan, diskusikan bersama kelompok, dan rancang
+              solusi menggunakan Berpikir Komputasional.
+            </p>
+          </div>
+
+          <!-- Video ilustrasi kasus -->
+          <div class="mission-card">
+            <div class="mission-card-heading">
+              <span class="mission-step">01</span>
+              <div>
+                <h3>Amati Permasalahan</h3>
+                <p>Tonton video berikut sebelum memulai diskusi.</p>
+              </div>
+            </div>
+
+            <div class="mission-video">
+              <iframe src="https://www.youtube.com/embed/LzJ3HiD1ciA" title="Video Kasus Selamatkan Antrean Kantin"
+                loading="lazy" allow="accelerometer; autoplay; clipboard-write;
+                 encrypted-media; gyroscope; picture-in-picture;
+                 web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="mission-video-caption">
+              <span>▶ Video ilustrasi kasus</span>
+              <span>Perhatikan masalah dan kemungkinan penyebabnya.</span>
+            </div>
+          </div>
+
+          <!-- Pertanyaan pemantik -->
+          <div class="mission-card">
+            <div class="mission-card-heading">
+              <span class="mission-step">02</span>
+              <div>
+                <h3>Pikirkan Masalahnya</h3>
+                <p>Gunakan pertanyaan berikut sebagai panduan awal.</p>
+              </div>
+            </div>
+
+            <div class="mission-question-list">
+              <div class="mission-question">
+                <span>1</span>
+                <p>Apa masalah utama yang terjadi dalam video?</p>
+              </div>
+              <div class="mission-question">
+                <span>2</span>
+                <p>Apa saja kemungkinan penyebab masalah tersebut?</p>
+              </div>
+              <div class="mission-question">
+                <span>3</span>
+                <p>Informasi apa yang diperlukan untuk menemukan solusi?</p>
+              </div>
+              <div class="mission-question">
+                <span>4</span>
+                <p>Bagaimana menyusun langkah penyelesaian yang logis dan teratur?</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instruksi diskusi kelompok -->
+          <div class="mission-card">
+            <div class="mission-card-heading">
+              <span class="mission-step">03</span>
+              <div>
+                <h3>Diskusikan Bersama Kelompok</h3>
+                <p>Pembagian kelompok akan disampaikan oleh guru di kelas.</p>
+              </div>
+            </div>
+
+            <div class="mission-group-note">
+              <span class="mission-note-icon">
+                <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </span>
+              <p>
+                Setelah kelompok ditentukan, diskusikan permasalahan dan
+                susun solusi awal. Setiap anggota diharapkan menyampaikan
+                gagasan dan berkontribusi dalam penyelesaian tugas.
+              </p>
+            </div>
+
+            <h4>Langkah kerja kelompok</h4>
+            <ol class="mission-task-list">
+              <li>Identifikasi masalah dan kemungkinan penyebabnya.</li>
+              <li>Pisahkan masalah menjadi bagian-bagian yang lebih kecil.</li>
+              <li>Tentukan informasi penting yang dibutuhkan.</li>
+              <li>Susun urutan langkah penyelesaian secara logis.</li>
+              <li>Gambarkan solusi awal dalam bentuk flowchart.</li>
+              <li>Siapkan hasil diskusi untuk dipresentasikan di kelas.</li>
+            </ol>
+
+            <div class="mission-reminder">
+              <strong>Ingat!</strong>
+              <p>
+                Tidak harus langsung menemukan solusi sempurna.
+                Tuliskan ide awal kelompok, kemudian periksa dan
+                perbaiki setelah mempelajari materi Berpikir Komputasional.
+              </p>
+            </div>
+          </div>
+
+          <!-- Unduh LKPD -->
+          <div class="mission-download-card">
+            <div class="mission-download-icon">
+              <svg class="ui-icon ui-icon-lg text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="mission-download-content">
+              <span class="mission-eyebrow">LEMBAR KERJA KELOMPOK</span>
+              <h3>LKPD — Misi Selamatkan Antrean Kantin</h3>
+              <p>
+                Unduh lembar kerja, buka menggunakan Microsoft Word
+                atau aplikasi pengolah dokumen di laptop sekolah,
+                lalu kerjakan bersama kelompok.
+              </p>
+              <a class="mission-download-button" href="assets/lkpd/LKPD-Misi-Selamatkan-Antrean-Kantin.docx" download>
+                <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Unduh LKPD (Word)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hasil yang harus disiapkan -->
+          <div class="mission-output">
+            <h3>Hasil yang Harus Disiapkan</h3>
+            <div class="mission-output-grid">
+              <div class="output-item"><span class="bullet-check"><svg class="ui-icon" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg></span> Analisis masalah</div>
+              <div class="output-item"><span class="bullet-check"><svg class="ui-icon" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg></span> Rancangan algoritma</div>
+              <div class="output-item"><span class="bullet-check"><svg class="ui-icon" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg></span> Flowchart awal</div>
+              <div class="output-item"><span class="bullet-check"><svg class="ui-icon" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg></span> Kesimpulan kelompok</div>
+            </div>
+            <p>
+              Simpan hasil pekerjaan dan ikuti petunjuk guru untuk
+              pengumpulan serta presentasi.
+            </p>
+          </div>
+
+        </div>
+      </section>
+      <!-- AKHIR MISI 01 -->
+
+    </div>
+    <!-- AKHIR HALAMAN ORIENTASI MASALAH -->
+
+
+    <!-- =====================================================
+     HALAMAN MATERI PEMBELAJARAN
+     ===================================================== -->
+    <div class="page-view" id="page-materi">
+
+      <div class="materi-page-container section-wrap">
+
+        <!-- 1. BANNER MATERI (Storyboard Panel 3) -->
+        <section class="materi-banner" id="materiBanner">
+          <div class="materi-banner-overlay"></div>
+          <div class="materi-banner-inner">
+            <div class="materi-banner-content">
+              <span class="materi-banner-badge">INFORMATIKA • SMA KELAS X • FASE E</span>
+              <h1 class="materi-banner-title">BERPIKIR KOMPUTASIONAL</h1>
+              <p class="materi-banner-desc">Petualangan memahami masalah dan menyusun solusi secara sistematis.</p>
+            </div>
+            <div class="materi-banner-art">
+              <img src="assets/hero-img.png" alt="Maskot Robot CT Game Lab" class="materi-banner-robot">
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. DUA KOLOM: TUJUAN PEMBELAJARAN & PROGRES PEMBELAJARAN -->
+        <section class="materi-overview-section" id="materiOverview">
+          <div class="materi-overview-grid">
+
+            <!-- Kolom Kiri: Tujuan Pembelajaran -->
+            <div class="materi-tujuan-card">
+              <span class="materi-eyebrow">TUJUAN PEMBELAJARAN</span>
+              <h2 class="materi-tujuan-title">Belajar memahami, bukan sekadar menghafal.</h2>
+              <p class="materi-tujuan-desc">
+                Setelah mempelajari materi dan menyelesaikan aktivitas, peserta didik diharapkan mampu memahami dan
+                menerapkan fondasi berpikir komputasional dalam menyelesaikan masalah sehari-hari.
+              </p>
+              <ol class="materi-tujuan-list">
+                <li>
+                  <span class="tujuan-num">1.</span>
+                  <span class="tujuan-text">Menjelaskan empat fondasi berpikir komputasional.</span>
+                </li>
+                <li>
+                  <span class="tujuan-num">2.</span>
+                  <span class="tujuan-text">Menganalisis permasalahan dalam kehidupan sehari-hari.</span>
+                </li>
+                <li>
+                  <span class="tujuan-num">3.</span>
+                  <span class="tujuan-text">Menyusun algoritma yang efektif dan efisien.</span>
+                </li>
+                <li>
+                  <span class="tujuan-num">4.</span>
+                  <span class="tujuan-text">Membuat flowchart untuk menyelesaikan masalah.</span>
+                </li>
+              </ol>
+            </div>
+
+            <!-- Kolom Kanan: Kartu Progres Pembelajaran -->
+            <div class="materi-progress-card">
+              <div class="materi-progress-top">
+                <div class="materi-progress-title-wrap">
+                  <h3 class="materi-progress-title">Progres Pembelajaran</h3>
+                  <span class="materi-progress-count" id="materiProgressCount">0 dari 4 aktivitas</span>
+                </div>
+                <span class="materi-progress-percent" id="materiProgressPercent">0%</span>
+              </div>
+              <div class="materi-progress-track">
+                <div class="materi-progress-fill" id="materiProgressBar" style="width: 0%;" role="progressbar"
+                  aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <ul class="materi-progress-list" id="materiProgressList">
+                <li class="materi-progress-item" data-activity="bacaan" id="progItemBacaan">
+                  <div class="materi-progress-info">
+                    <span class="materi-progress-icon" id="progIconBacaan">
+                      <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                      </svg>
+                    </span>
+                    <span class="materi-progress-name">Bahan Bacaan</span>
+                  </div>
+                  <span class="materi-status-pill status-uncompleted" id="progPillBacaan">Belum selesai</span>
+                </li>
+                <li class="materi-progress-item" data-activity="video" id="progItemVideo">
+                  <div class="materi-progress-info">
+                    <span class="materi-progress-icon" id="progIconVideo">
+                      <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+                      </svg>
+                    </span>
+                    <span class="materi-progress-name">Video Pembelajaran</span>
+                  </div>
+                  <span class="materi-status-pill status-uncompleted" id="progPillVideo">Belum selesai</span>
+                </li>
+                <li class="materi-progress-item" data-activity="hanoi" id="progItemHanoi">
+                  <div class="materi-progress-info">
+                    <span class="materi-progress-icon" id="progIconHanoi">
+                      <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                      </svg>
+                    </span>
+                    <span class="materi-progress-name">Games Tower of Hanoi</span>
+                  </div>
+                  <span class="materi-status-pill status-uncompleted" id="progPillHanoi">Belum selesai</span>
+                </li>
+                <li class="materi-progress-item" data-activity="flowchart" id="progItemFlowchart">
+                  <div class="materi-progress-info">
+                    <span class="materi-progress-icon" id="progIconFlowchart">
+                      <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="6" height="6" rx="1"></rect>
+                        <rect x="15" y="15" width="6" height="6" rx="1"></rect>
+                        <rect x="3" y="15" width="6" height="6" rx="1"></rect>
+                        <path d="M6 9v3a3 3 0 0 0 3 3h6"></path>
+                        <path d="M6 15v-3"></path>
+                      </svg>
+                    </span>
+                    <span class="materi-progress-name">Flowchart Builder</span>
+                  </div>
+                  <span class="materi-status-pill status-uncompleted" id="progPillFlowchart">Belum selesai</span>
+                </li>
+              </ul>
+              <!-- Pesan Penyelesaian 100% -->
+              <div class="materi-progress-celebration" id="materiProgressCelebration" style="display: none;">
+                <p>
+                  <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="6"></circle>
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                  </svg>
+                  <b>Hebat!</b> Kamu telah menyelesaikan seluruh aktivitas pembelajaran.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 3. GRID AKTIVITAS MATERI (4 KARTU) -->
+        <section class="materi-activities-section" id="materiActivities">
+          <div class="materi-activities-heading">
+            <h3 class="materi-activities-title">Aktivitas Materi</h3>
+          </div>
+          <div class="materi-activities-grid">
+
+            <!-- KARTU 1: BAHAN BACAAN -->
+            <article class="activity-card active-activity-card" id="card-act-bacaan" data-subtab="bacaan">
+              <div class="activity-card-top">
+                <div class="activity-card-icon icon-purple">
+                  <svg class="ui-icon-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </div>
+                <span class="activity-status-pill status-uncompleted" id="cardStatusPillBacaan">Belum selesai</span>
+              </div>
+              <h4 class="activity-card-title">Bahan Bacaan</h4>
+              <p class="activity-card-desc">Pelajari materi berpikir komputasional melalui bahan ajar PDF.</p>
+              <div class="activity-card-bottom">
+                <button type="button" class="btn-activity-action" data-open-subtab="bacaan">
+                  <span>Buka Bahan Bacaan</span> <span class="action-arrow">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- KARTU 2: VIDEO PEMBELAJARAN -->
+            <article class="activity-card" id="card-act-video" data-subtab="video">
+              <div class="activity-card-top">
+                <div class="activity-card-icon icon-blue">
+                  <svg class="ui-icon-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+                  </svg>
+                </div>
+                <span class="activity-status-pill status-uncompleted" id="cardStatusPillVideo">Belum selesai</span>
+              </div>
+              <h4 class="activity-card-title">Video Pembelajaran</h4>
+              <p class="activity-card-desc">Tonton video untuk memahami konsep dan contoh penerapan CT.</p>
+              <div class="activity-card-bottom">
+                <button type="button" class="btn-activity-action" data-open-subtab="video">
+                  <span>Tonton Video</span> <span class="action-arrow">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- KARTU 3: GAMES TOWER OF HANOI -->
+            <article class="activity-card" id="card-act-game" data-subtab="game">
+              <div class="activity-card-top">
+                <div class="activity-card-icon icon-indigo">
+                  <svg class="ui-icon-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <span class="activity-status-pill status-uncompleted" id="cardStatusPillHanoi">Belum selesai</span>
+              </div>
+              <h4 class="activity-card-title">Games Tower of Hanoi</h4>
+              <p class="activity-card-desc">Eksplorasi strategi dan algoritma melalui permainan Tower of Hanoi.</p>
+              <div class="activity-card-bottom">
+                <button type="button" class="btn-activity-action" data-open-subtab="game">
+                  <span>Mainkan Game</span> <span class="action-arrow">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- KARTU 4: FLOWCHART BUILDER -->
+            <article class="activity-card" id="card-act-flowchart" data-subtab="flowchart">
+              <div class="activity-card-top">
+                <div class="activity-card-icon icon-cyan">
+                  <svg class="ui-icon-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="6" height="6" rx="1"></rect>
+                    <rect x="15" y="15" width="6" height="6" rx="1"></rect>
+                    <rect x="3" y="15" width="6" height="6" rx="1"></rect>
+                    <path d="M6 9v3a3 3 0 0 0 3 3h6"></path>
+                    <path d="M6 15v-3"></path>
+                  </svg>
+                </div>
+                <span class="activity-status-pill status-uncompleted" id="cardStatusPillFlowchart">Belum selesai</span>
+              </div>
+              <h4 class="activity-card-title">Flowchart Builder</h4>
+              <p class="activity-card-desc">Buat flowchart untuk menyelesaikan permasalahan sehari-hari.</p>
+              <div class="activity-card-bottom">
+                <button type="button" class="btn-activity-action" data-open-subtab="flowchart">
+                  <span>Buat Flowchart</span> <span class="action-arrow">→</span>
+                </button>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </div><!-- /.materi-page-container -->
+
+      <!-- ========================================================
+         AREA KONTEN 4 SUBBAB MATERI
+         ======================================================== -->
+      <div id="materiSubbabContent" class="materi-subbab-content-wrapper">
+
+        <!-- SUBBAB A: Bahan Bacaan -->
+        <div class="subtab-panel active" id="subbab-bacaan" role="tabpanel" aria-labelledby="card-act-bacaan">
+          <section class="section-wrap" id="materi">
+            <div class="section-heading">
+              <div><span class="eyebrow">JELAJAHI MATERI</span>
+                <h2>Empat fondasi CT</h2>
+              </div>
+
+            </div>
+            <div class="foundation-grid">
+              <article class="foundation-card">
+                <div class="card-icon purple">
+                  <svg class="ui-icon ui-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                  </svg>
+                </div>
+                <span class="number">01 / BREAK IT DOWN</span>
+                <h3>Dekomposisi</h3>
+                <p>Memecah masalah kompleks menjadi bagian atau submasalah yang lebih kecil agar mudah dipahami dan
+                  diselesaikan.</p>
+                <div class="example"><b>Contoh</b><br>Menyelenggarakan pameran kelas: tema, pendataan karya,
+                  perlengkapan,
+                  publikasi, jadwal, dan pembagian tugas.</div>
+                <button class="text-button" data-expand="detail1">Pelajari lebih lanjut ↗</button>
+                <div class="extra" id="detail1">Coba pikirkan: bagian mana yang saling bergantung? Apa risiko jika
+                  pembagian
+                  tugas tidak jelas?</div>
+              </article>
+              <article class="foundation-card">
+                <div class="card-icon orange">
+                  <svg class="ui-icon ui-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </div>
+                <span class="number">02 / FIND PATTERNS</span>
+                <h3>Pengenalan Pola</h3>
+                <p>Mencari kesamaan, perbedaan, pengulangan, atau hubungan pada masalah dan data untuk membantu membuat
+                  prediksi.</p>
+                <div class="example"><b>Contoh</b><br>Pola angka 2, 4, 6, 8, ... bertambah dua setiap langkah, sehingga
+                  angka
+                  berikutnya adalah 10.</div>
+                <button class="text-button" data-expand="detail2">Pelajari lebih lanjut ↗</button>
+                <div class="extra" id="detail2">Pola tidak otomatis membuktikan sebab-akibat. Data tambahan apa yang
+                  diperlukan agar kesimpulan lebih kuat?</div>
+              </article>
+              <article class="foundation-card">
+                <div class="card-icon green">
+                  <svg class="ui-icon ui-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5">
+                    </path>
+                    <path d="M9 18h6"></path>
+                    <path d="M10 22h4"></path>
+                  </svg>
+                </div>
+                <span class="number">03 / KEEP WHAT MATTERS</span>
+                <h3>Abstraksi</h3>
+                <p>Berfokus pada informasi yang relevan untuk tujuan tertentu sambil mengabaikan detail yang tidak
+                  memengaruhi
+                  solusi.</p>
+                <div class="example"><b>Contoh</b><br>Untuk mencari rute tercepat, perhatikan lokasi, jarak, kondisi
+                  jalan,
+                  dan waktu tempuh—bukan warna tas.</div>
+                <button class="text-button" data-expand="detail3">Pelajari lebih lanjut ↗</button>
+                <div class="extra" id="detail3">Informasi yang diabaikan pada satu masalah bisa menjadi penting pada
+                  masalah
+                  lain. Jelaskan dengan contoh.</div>
+              </article>
+              <article class="foundation-card">
+                <div class="card-icon blue">
+                  <svg class="ui-icon ui-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="6" y1="3" x2="6" y2="15"></line>
+                    <circle cx="18" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <path d="M18 9a9 9 0 0 1-9 9"></path>
+                  </svg>
+                </div>
+                <span class="number">04 / STEP BY STEP</span>
+                <h3>Algoritma</h3>
+                <p>Menyusun urutan instruksi yang logis, jelas, dan berhingga untuk menyelesaikan masalah.</p>
+                <div class="example"><b>Contoh</b><br>Menghitung rata-rata: masukkan nilai, jumlahkan, hitung banyak
+                  data,
+                  bagi jumlah dengan banyak data, lalu tampilkan hasil.</div>
+                <button class="text-button" data-expand="detail4">Pelajari lebih lanjut ↗</button>
+                <div class="extra" id="detail4">Uji algoritma dengan contoh normal dan kondisi khusus, seperti data
+                  kosong.
+                  Jika hasil tidak sesuai, perbaiki dan uji kembali.</div>
+              </article>
+            </div>
+            <div class="content-panel pdf-panel">
+              <div class="section-heading">
+                <div><span class="eyebrow">MATERI LENGKAP</span>
+                  <h2>Baca PDF di website</h2>
+                </div>
+                <a class="btn ghost" href="assets/bahanajar.pdf" target="_blank" rel="noopener">Buka PDF Materi Lengkap
+                  ↗</a>
+              </div>
+              <div class="pdf-frame"><iframe src="assets/bahanajar.pdf" title="Materi lengkap Computational Thinking"
+                  loading="lazy"></iframe></div>
+              <!-- Bar Konfirmasi Selesai Membaca PDF (Tahap 4) -->
+              <div class="activity-completion-bar" id="bacaanCompletionBar">
+                <div class="completion-info">
+                  <span class="completion-icon">
+                    <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                  </span>
+                  <div>
+                    <h4>Sudah selesai mempelajari bahan ajar PDF?</h4>
+                    <p>Tandai aktivitas ini selesai untuk menambahkan 25% ke progres belajarmu.</p>
+                  </div>
+                </div>
+                <div class="completion-actions">
+                  <button type="button" class="btn btn-mark-complete" id="btnCompleteBacaan">
+                    <span>Saya Sudah Selesai Membaca</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </button>
+                  <div class="completion-status-badge" id="badgeCompleteBacaan" style="display: none;">
+                    <span class="status-good"><svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg> Bahan Bacaan telah diselesaikan (+25%)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-panel">
+              <div class="section-heading">
+                <div><span class="eyebrow">REPRESENTASI ALGORITMA</span>
+                  <h2>Simbol dasar flowchart</h2>
+                </div>
+              </div>
+              <div class="symbol-grid">
+                <div class="symbol-item"><span class="symbol terminal">Mulai /
+                    Selesai</span><b>Terminator</b><small>Awal
+                    atau
+                    akhir alur.</small></div>
+                <div class="symbol-item"><span class="symbol process">Proses</span><b>Process</b><small>Tindakan atau
+                    pengolahan.</small></div>
+                <div class="symbol-item"><span class="symbol io">Input / Output</span><b>Input / Output</b><small>Data
+                    masuk
+                    atau hasil keluar.</small></div>
+                <div class="symbol-item"><span class="symbol decision">Ya / Tidak</span><b>Decision</b><small>Pilihan
+                    berdasarkan kondisi.</small></div>
+                <div class="symbol-item"><span class="symbol arrow-symbol">↓ →</span><b>Flowline</b><small>Arah urutan
+                    langkah.</small></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- SUBBAB B: Video Pembelajaran -->
+        <div class="subtab-panel" id="subbab-video" role="tabpanel" aria-labelledby="card-act-video">
+          <section class="section-wrap media-section" id="video">
+            <div class="section-heading">
+              <div><span class="eyebrow">TONTON & PAHAMI</span>
+                <h2>Video pembelajaran</h2>
+              </div>
+            </div>
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/VP8eBD3a55Q?si=_vbVJvrypsfkjjsl" title="YouTube video player"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+              </iframe>
+            </div>
+            <p class="caption">Video Pembelajaran Berpikir Komputasional SMA Kelas X. Jika video tidak dapat diputar
+              pada
+              perangkatmu, buka langsung di YouTube melalui tautan berikut:</p>
+            <div class="video-action-row" style="margin-top: 15px;">
+              <a class="btn ghost" href="https://www.youtube.com/watch?v=VP8eBD3a55Q" target="_blank"
+                rel="noopener">Tonton di YouTube ↗</a>
+            </div>
+            <!-- Bar Konfirmasi Selesai Menonton Video (Tahap 4) -->
+            <div class="activity-completion-bar" id="videoCompletionBar">
+              <div class="completion-info">
+                <span class="completion-icon">
+                  <svg class="ui-icon ui-icon-md text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+                  </svg>
+                </span>
+                <div>
+                  <h4>Sudah selesai menyimak video pembelajaran?</h4>
+                  <p>Tandai aktivitas ini selesai untuk menambahkan 25% ke progres belajarmu.</p>
+                </div>
+              </div>
+              <div class="completion-actions">
+                <button type="button" class="btn btn-mark-complete" id="btnCompleteVideo">
+                  <span>Saya Sudah Selesai Menonton</span>
+                  <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+                <div class="completion-status-badge" id="badgeCompleteVideo" style="display: none;">
+                  <span class="status-good"><svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg> Video Pembelajaran telah diselesaikan (+25%)</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- SUBBAB C: Games Tower of Hanoi -->
+        <div class="subtab-panel" id="subbab-game" role="tabpanel" aria-labelledby="card-act-game">
+          <section class="section-wrap embed-section" id="game">
+            <div class="section-heading">
+              <div><span class="eyebrow">GAME & EKSPLORASI</span>
+                <h2>Tower of Hanoi</h2>
+              </div>
+            </div>
+            <div class="game-card">
+              <div class="game-description">
+                <div class="placeholder-icon">
+                  <svg class="ui-icon ui-icon-xl text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <h3>Tantangan Penalaran Algoritmik</h3>
+                <p>Pindahkan seluruh susunan cakram dari tiang awal ke tiang tujuan dengan aturan ketat: hanya satu
+                  cakram
+                  yang boleh dipindahkan per langkah, dan cakram yang lebih besar tidak boleh berada di atas cakram yang
+                  lebih kecil.</p>
+                <ul>
+                  <li><b>Dekomposisi:</b> Bagaimana masalah besar dipecah menjadi langkah kecil?</li>
+                  <li><b>Pengenalan Pola:</b> Strategi atau gerakan apa yang selalu berulang?</li>
+                  <li><b>Algoritma:</b> Bagaimana kamu membandingkan efisiensi jumlah langkah?</li>
+                </ul>
+                <a class="btn primary" href="https://www.mathsisfun.com/games/towerofhanoi.html" target="_blank"
+                  rel="noopener">Mulai Permainan di Tab Baru ↗</a>
+              </div>
+              <div class="game-embed">
+                <iframe src="https://www.mathsisfun.com/games/towerofhanoi.html" title="Tower of Hanoi Game"
+                  loading="lazy"
+                  style="width: 100%; height: 380px; border: none; border-radius: 12px; background: #ffffff;">
+                </iframe>
+              </div>
+            </div>
+
+            <!-- LEMBAR REFLEKSI PERMAINAN TOWER OF HANOI (REVISI 3) -->
+            <div class="hanoi-reflection-panel">
+              <div class="section-heading">
+                <div>
+                  <span class="eyebrow">LEMBAR REFLEKSI SISWA</span>
+                  <h2>Refleksi Penalaran &amp; Strategi Algoritmik</h2>
+                </div>
+              </div>
+              <p>Tuliskan refleksimu setelah mengeksplorasi strategi memindahkan cakram pada permainan Tower of Hanoi.
+                Catatan tersimpan secara otomatis di peramban ini.</p>
+              <form class="hanoi-form" id="hanoiForm" onsubmit="return false;">
+                <div class="form-row-identity">
+                  <div class="form-field">
+                    <label for="hanoiStudentName"><b>Nama Lengkap:</b> <span class="required">*</span></label>
+                    <input type="text" id="hanoiStudentName" placeholder="Masukkan nama lengkapmu..."
+                      autocomplete="name">
+                  </div>
+                  <div class="form-field">
+                    <label for="hanoiStudentAbsen"><b>Nomor Absen / Kelas:</b> <span class="required">*</span></label>
+                    <input type="text" id="hanoiStudentAbsen" placeholder="Contoh: 15 / X-2">
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="hanoiAns1"><b>1. Dekomposisi (Memecah Masalah):</b><br><small>Bagaimana kamu memecah
+                      masalah
+                      besar (memindahkan seluruh cakram) menjadi sub-tujuan atau langkah-langkah kecil?</small></label>
+                  <textarea id="hanoiAns1" rows="3" placeholder="Tuliskan analisis dekomposisimu di sini..."></textarea>
+                </div>
+                <div class="form-field">
+                  <label for="hanoiAns2"><b>2. Pengenalan Pola (Pola Berulang):</b><br><small>Strategi atau urutan
+                      gerakan
+                      apa yang kamu sadari selalu berulang saat memindahkan cakram ke tiang bantu atau
+                      tujuan?</small></label>
+                  <textarea id="hanoiAns2" rows="3"
+                    placeholder="Tuliskan pola gerakan yang kamu temukan di sini..."></textarea>
+                </div>
+                <div class="form-field">
+                  <label for="hanoiAns3"><b>3. Algoritma &amp; Abstraksi (Efisiensi Langkah):</b><br><small>Bagaimana
+                      kamu
+                      membandingkan efisiensi strategi langkahmu? Informasi atau detail apa yang kamu abaikan agar fokus
+                      pada tujuan akhir?</small></label>
+                  <textarea id="hanoiAns3" rows="3"
+                    placeholder="Tuliskan evaluasi efisiensi algoritma dan abstraksimu di sini..."></textarea>
+                </div>
+                <div class="hanoi-actions">
+                  <button type="button" id="saveHanoiBtn" class="btn primary">
+                    <span>Simpan Jawaban</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </button>
+                  <button type="button" id="editHanoiBtn" class="btn ghost">
+                    <span>Edit Jawaban</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                    </svg>
+                  </button>
+                  <button type="button" id="copyHanoiBtn" class="btn ghost">
+                    <span>Salin Teks</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                  </button>
+                  <button type="button" id="downloadHanoiBtn" class="btn ghost">
+                    <span>Unduh TXT</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div id="hanoiSaveStatus" class="hanoi-save-status" aria-live="polite"></div>
+                <div class="completion-status-badge" id="badgeCompleteHanoi" style="display: none; margin-top: 12px;">
+                  <span class="status-good"><svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg> Refleksi Tower of Hanoi telah disimpan (+25%)</span>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+
+        <!-- SUBBAB D: Flowchart Builder (REVISI 4 & 5: URUTAN PEDAGOGIS BARU) -->
+        <div class="subtab-panel" id="subbab-flowchart" role="tabpanel" aria-labelledby="card-act-flowchart">
+          <section class="section-wrap builder-section" id="builder">
+            <!-- 1. Pengantar Flowchart Builder -->
+            <div class="section-heading">
+              <div><span class="eyebrow">RUANG PRAKTIK INTERAKTIF</span>
+                <h2>Flowchart Builder</h2>
+              </div>
+            </div>
+
+            <!-- 2. Bagian Studi Kasus Terpadu (DIPINDAHKAN KE ATAS BUILDER) -->
+            <div class="case-section integrated-case-box" id="integratedCaseSection">
+              <div class="section-wrap case-layout">
+                <div>
+                  <span class="eyebrow light">STUDI KASUS TERPADU</span>
+                  <h2>Bagaimana mengurai<br>antrean kantin?</h2>
+                  <p>Pada jam istirahat, antrean kantin panjang sehingga sebagian siswa memiliki sedikit waktu untuk
+                    makan.
+                    Tujuannya adalah mengurangi waktu tunggu tanpa mengurangi ketepatan transaksi atau membuat akses
+                    tidak
+                    adil.</p>
+                  <a class="btn light-btn" href="#builderWorkspace" id="caseToCanvasBtn">Mulai Menyusun Flowchart ↘</a>
+                </div>
+                <div class="case-steps">
+                  <div><b>01</b>
+                    <div>
+                      <h3>Dekomposisi</h3>
+                      <p>Uraikan faktor: jumlah loket, jenis transaksi, pembeli, dan alur pemesanan.</p>
+                    </div>
+                  </div>
+                  <div><b>02</b>
+                    <div>
+                      <h3>Pengenalan pola</h3>
+                      <p>Catat jam ramai, menu populer, dan transaksi yang memerlukan waktu lama.</p>
+                    </div>
+                  </div>
+                  <div><b>03</b>
+                    <div>
+                      <h3>Abstraksi</h3>
+                      <p>Pilih data yang berpengaruh pada waktu tunggu dan abaikan yang tidak relevan.</p>
+                    </div>
+                  </div>
+                  <div><b>04</b>
+                    <div>
+                      <h3>Algoritma & pengujian</h3>
+                      <p>Uji perubahan alur pelayanan, ukur hasil, lalu revisi jika diperlukan.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Pemilihan Mode Pengerjaan (Langkah 1: Tentukan Mode Belajar) -->
+            <div class="mode-picker" role="group" aria-label="Pilih mode flowchart">
+              <button type="button" class="mode-card active" data-mode="guided">
+                <span class="mode-icon">
+                  <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                  </svg>
+                </span>
+                <b>Mode Latihan Terpandu</b>
+                <small>5 studi kasus latihan. Diagram bantuan sudah disiapkan; lengkapi bagian yang sengaja dikosongkan
+                  sesuai petunjuk.</small>
+              </button>
+              <button type="button" class="mode-card" data-mode="free">
+                <span class="mode-icon">
+                  <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                </span>
+                <b>Mode Latihan Mandiri</b>
+                <small>5 studi kasus tantangan baru. Kanvas bersih dimulai dari Mulai dan Selesai; susun seluruh solusi
+                  diagram secara mandiri.</small>
+              </button>
+            </div>
+
+            <!-- 4. Pemilihan Studi Kasus & Penjelasan Masalah (Langkah 2: Pilih Kasus sesuai Mode) -->
+            <div class="builder-case-picker content-panel">
+              <label for="caseSelect"><b>Pilih Studi Kasus yang Ingin Diselesaikan:</b></label>
+              <select id="caseSelect">
+                <option value="school">1. Memeriksa perlengkapan sekolah</option>
+                <option value="umbrella">2. Memutuskan membawa payung</option>
+                <option value="homework">3. Memeriksa pengumpulan tugas digital</option>
+                <option value="canteen">4. Mengambil pesanan di kantin sekolah</option>
+                <option value="waste">5. Memilah sampah di lingkungan sekolah</option>
+              </select>
+              <div id="caseBrief" class="case-brief" aria-live="polite"></div>
+              <div class="case-goals" id="caseGoals"></div>
+            </div>
+
+            <!-- 5. Petunjuk Singkat Identifikasi Input, Proses, Keputusan, dan Output -->
+            <div class="builder-help" id="modeInstructions">
+              <b>Mode Latihan Terpandu:</b> Diagram bantuan disiapkan untuk 5 kasus latihan. Lengkapi bagian yang
+              sengaja
+              dikosongkan (ditandai dengan bingkai putus-putus dan badge khusus), periksa umpan balik, dan sesuaikan
+              alur.
+            </div>
+
+            <!-- 6. Ruang Kerja Kanvas Flowchart Builder -->
+            <div class="builder-workspace" id="builderWorkspace">
+              <aside class="content-panel symbol-palette">
+                <h3>
+                  <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+                  </svg>
+                  Palet Simbol
+                </h3>
+                <p>Seret simbol ke kanvas. Tarik panah dari titik konektor (node ungu) di bawah simbol ke simbol tujuan.
+                </p>
+                <button type="button" class="palette-item" draggable="true" data-node="start"><span
+                    class="mini-symbol terminal">Mulai</span><b>Mulai</b></button>
+                <button type="button" class="palette-item" draggable="true" data-node="io"><span
+                    class="mini-symbol io">Input
+                    / Output</span><b>Input / Output</b></button>
+                <button type="button" class="palette-item" draggable="true" data-node="process"><span
+                    class="mini-symbol process">Proses</span><b>Proses</b></button>
+                <button type="button" class="palette-item" draggable="true" data-node="decision"><span
+                    class="mini-symbol decision">?</span><b>Keputusan</b></button>
+                <button type="button" class="palette-item" draggable="true" data-node="end"><span
+                    class="mini-symbol terminal">Selesai</span><b>Selesai</b></button>
+              </aside>
+              <div class="content-panel builder-canvas-panel">
+                <div class="builder-canvas-head">
+                  <b>
+                    <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                      <line x1="3" y1="9" x2="21" y2="9"></line>
+                      <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                    Kanvas Flowchart
+                  </b>
+                  <span id="builderCount">2 simbol</span>
+                </div>
+                <div id="flowchartCanvas" class="flowchart-canvas" aria-label="Kanvas untuk menyusun flowchart">
+                  <div class="canvas-empty">Pilih simbol dari panel kiri untuk mulai menyusun flowchart.</div>
+                </div>
+                <!-- 7. Tombol Aksi Pemeriksaan, Reset, dan Ekspor -->
+                <div class="canvas-actions">
+                  <button type="button" id="hintBuilder" class="btn ghost">
+                    <span>Petunjuk Kasus</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                  </button>
+                  <button type="button" id="checkFlowchart" class="btn primary">
+                    <span>Periksa Flowchart</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </button>
+                  <button type="button" id="resetBuilder" class="btn ghost">
+                    <span>Mulai Ulang</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                      <path d="M3 3v5h5"></path>
+                    </svg>
+                  </button>
+                  <button type="button" id="exportSvg" class="btn ghost">
+                    <span>Unduh Diagram SVG</span>
+                    <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div id="builderFeedback" class="builder-feedback" aria-live="polite">
+                  <b>Umpan balik akan muncul di sini.</b>
+                  <p>Susun simbol dan hubungkan alurnya, lalu tekan “Periksa Flowchart”.</p>
+                </div>
+                <div class="completion-status-badge" id="badgeCompleteFlowchart"
+                  style="display: none; margin-top: 12px;">
+                  <span class="status-good"><svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg> Praktik Flowchart Builder telah diselesaikan (+25%)</span>
+                </div>
+                <p id="builderStatus" class="small-note" aria-live="polite">Tips: setiap jalur sebaiknya berawal dari
+                  Mulai dan berakhir di Selesai.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div><!-- /#materiSubbabContent -->
+    </div>
+
+    <!-- ========================================================
+       HALAMAN 2: ASESMEN (KUIS INTERNAL & WAYGROUND)
+       ======================================================== -->
+    <div class="page-view" id="page-asesmen">
+
+      <!-- TAMPILAN 1: ASESMEN TERKUNCI (STORYBOARD PANEL 4 - PROGRES < 100%) -->
+      <div class="asesmen-locked-wrap section-wrap" id="asesmenLockedView">
+        <div class="asesmen-locked-container">
+          <div class="asesmen-locked-art">
+            <img src="assets/hero-img.png" alt="Maskot CT Game Lab" class="asesmen-locked-robot">
+          </div>
+          <div class="asesmen-locked-card">
+            <div class="locked-padlock-badge">
+              <span class="padlock-icon">
+                <svg class="ui-icon locked-padlock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </span>
+            </div>
+            <h2 class="locked-card-title">Asesmen Belum Tersedia</h2>
+            <p class="locked-card-desc">
+              Kamu perlu menyelesaikan seluruh aktivitas pembelajaran pada menu <b>Materi</b> terlebih dahulu sebelum
+              mengerjakan asesmen.
+            </p>
+            <div class="locked-progress-box">
+              <div class="locked-progress-label">
+                <span>Progres Belajarmu:</span>
+                <b id="lockedProgressPercent">0%</b>
+              </div>
+              <div class="materi-progress-bar-wrap">
+                <div class="materi-progress-bar-fill" id="lockedProgressBar" style="width: 0%;"></div>
+              </div>
+              <small class="locked-progress-hint" id="lockedProgressHint">0 dari 4 aktivitas selesai</small>
+            </div>
+            <div class="locked-actions">
+              <button type="button" class="btn btn-locked-disabled" id="btnLockedStatus" disabled>
+                <svg class="ui-icon ui-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>Asesmen Terkunci</span>
+              </button>
+              <button type="button" class="btn btn-continue-learning" id="btnLockedToMateri">
+                <span>Lanjutkan Belajar di Menu Materi</span> <span class="action-arrow">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAMPILAN 2: ASESMEN TERBUKA (STORYBOARD PANEL 5 & 6 - PROGRES = 100%) -->
+      <div class="asesmen-unlocked-wrap section-wrap" id="asesmenUnlockedView" style="display: none;">
+
+        <!-- PANEL 5: BANNER SELAMAT & RINGKASAN PROGRES LENGKAP -->
+        <section class="asesmen-celebration-hero">
+          <div class="celebration-hero-grid">
+            <div class="celebration-banner-card">
+              <div class="celebration-badge-icon">
+                <svg class="ui-icon ui-icon-xl text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"></circle>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                </svg>
+              </div>
+              <h2 class="celebration-title">Selamat!</h2>
+              <p class="celebration-desc">
+                Kamu telah menyelesaikan seluruh materi. Sekarang kamu dapat mengerjakan asesmen.
+              </p>
+              <a href="#ujiPemahamanSection" class="btn primary btn-scroll-quiz" id="btnScrollToQuiz">
+                <span>Mulai Asesmen</span> <span class="action-arrow">→</span>
+              </a>
+            </div>
+
+            <div class="celebration-progress-card">
+              <div class="celebration-progress-header">
+                <h3>Progres Pembelajaran</h3>
+                <span class="celebration-progress-badge">4 dari 4 aktivitas</span>
+              </div>
+              <div class="materi-progress-bar-wrap">
+                <div class="materi-progress-bar-fill success-fill" style="width: 100%;"></div>
+              </div>
+              <ul class="celebration-checklist">
+                <li class="checked"><span class="check-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg></span> <span>Bahan Bacaan</span> <span class="tag-status done">Selesai</span></li>
+                <li class="checked"><span class="check-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg></span> <span>Video Pembelajaran</span> <span class="tag-status done">Selesai</span></li>
+                <li class="checked"><span class="check-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg></span> <span>Games Tower of Hanoi</span> <span class="tag-status done">Selesai</span></li>
+                <li class="checked"><span class="check-icon"><svg class="ui-icon" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg></span> <span>Flowchart Builder</span> <span class="tag-status done">Selesai</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4 Ringkasan Kartu Materi di Bawah Banner (Sesuai Storyboard Panel 5) -->
+          <div class="celebration-materi-summary">
+            <h4 class="summary-title">Materi Pembelajaran</h4>
+            <div class="summary-cards-grid">
+              <div class="summary-card">
+                <span class="card-icon">
+                  <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </span>
+                <b>Bahan Bacaan</b>
+                <span class="card-pill done">Selesai</span>
+              </div>
+              <div class="summary-card">
+                <span class="card-icon">
+                  <svg class="ui-icon ui-icon-md text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+                  </svg>
+                </span>
+                <b>Video Pembelajaran</b>
+                <span class="card-pill done">Selesai</span>
+              </div>
+              <div class="summary-card">
+                <span class="card-icon">
+                  <svg class="ui-icon ui-icon-md text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </span>
+                <b>Games Tower of Hanoi</b>
+                <span class="card-pill done">Selesai</span>
+              </div>
+              <div class="summary-card">
+                <span class="card-icon">
+                  <svg class="ui-icon ui-icon-md text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="6" height="6" rx="1"></rect>
+                    <rect x="15" y="15" width="6" height="6" rx="1"></rect>
+                    <rect x="3" y="15" width="6" height="6" rx="1"></rect>
+                    <path d="M6 9v3a3 3 0 0 0 3 3h6"></path>
+                    <path d="M6 15v-3"></path>
+                  </svg>
+                </span>
+                <b>Flowchart Builder</b>
+                <span class="card-pill done">Selesai</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PANEL 6: UJI PEMAHAMAN (EVALUASI PEMBELAJARAN) -->
+        <section class="section-wrap uji-pemahaman-section" id="ujiPemahamanSection">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">ASESMEN</span>
+              <h2>Uji Pemahaman</h2>
+              <p class="section-subheading">Kerjakan soal berikut untuk mengukur pemahamanmu setelah mempelajari seluruh
+                materi.</p>
+            </div>
+          </div>
+
+          <div class="quiz-info-card">
+            <div class="quiz-info-left">
+              <div class="quiz-info-icon">
+                <svg class="ui-icon ui-icon-xl text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                  <path d="m9 14 2 2 4-4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Siap mengerjakan?</h3>
+                <p>Terdapat 5 soal dengan berbagai tipe (studi kasus, analisis, dan pemecahan masalah).</p>
+              </div>
+            </div>
+            <div class="quiz-info-right">
+              <button type="button" class="btn primary" id="btnStartQuizAction">
+                <span>Mulai Mengerjakan</span> <span class="action-arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Kuis Wayground Embed Area -->
+          <div class="embed-panel quiz-embed-container" id="quizEmbedContainer" style="margin-top: 24px;">
+            <div id="waygroundPlaceholder" class="external-placeholder">
+              <div class="placeholder-icon">
+                <svg class="ui-icon ui-icon-xl text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3>Area Embed Wayground</h3>
+                <p>Setelah membuat kuis, salin URL <code>src</code> dari kode embed Wayground lalu masukkan ke
+                  konstanta <code>WAYGROUND_EMBED_URL</code> di file <code>script.js</code>. Lihat
+                  <code>PANDUAN_EDIT.md</code>.
+                </p>
+                <a class="btn primary" href="https://wayground.com/" target="_blank" rel="noopener">Buka Asesmen
+                  Wayground ↗</a>
+              </div>
+            </div>
+            <div id="waygroundFrameWrap" class="embed-frame hidden"><iframe id="waygroundFrame" title="Kuis Wayground"
+                loading="lazy" allowfullscreen></iframe></div>
+          </div>
+        </section>
+
+      </div>
+    </div> <!-- Penutup page-asesmen -->
+
+    <!-- ========================================================
+     HALAMAN: REFLEKSI
+     ======================================================== -->
+    <div class="page-view" id="page-refleksi">
+      <section class="section-wrap reflection-section" id="refleksi">
+
+
+
+        <!-- AREA EMBED PADLET -->
+        <div class="content-panel padlet-panel">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">REFLEKSI PEMBELAJARAN</span>
+              <h2>Bagikan Refleksimu</h2>
+            </div>
+          </div>
+
+          <p>
+            Ceritakan fondasi CT yang paling kamu pahami, tantangan
+            yang kamu hadapi, dan bagaimana kamu memperbaiki flowchart.
+          </p>
+
+          <div class="padlet-embed">
+            <iframe src="https://padlet.com/trianasinaga01/refleksi-materi-computational-thingking-s024udndzn7q0y9069oj"
+              title="Padlet Refleksi Pembelajaran CT" loading="lazy" allow="camera; microphone" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- =====================================================
+     HALAMAN: TENTANG MEDIA (STORYBOARD PANEL 7)
+     ===================================================== -->
+    <div class="page-view" id="page-tentang">
+      <div class="tentang-container section-wrap">
+
+        <!-- BAGIAN 1 — HERO TENTANG MEDIA -->
+        <section class="tentang-hero-banner" id="tentangHeroBanner">
+          <div class="tentang-banner-overlay"></div>
+          <div class="tentang-banner-inner">
+            <div class="tentang-banner-content">
+              <span class="tentang-banner-badge">TENTANG MEDIA</span>
+              <h1 class="tentang-banner-title">Tentang Media</h1>
+              <p class="tentang-banner-desc">
+                CT Game Lab merupakan media pembelajaran interaktif yang dikembangkan untuk membantu peserta didik
+                memahami dan menerapkan konsep Berpikir Komputasional melalui materi, video, permainan, dan latihan
+                penyusunan flowchart.
+              </p>
+            </div>
+            <div class="tentang-banner-art">
+              <!-- Maskot Robot CT Game Lab (Konsisten dengan Hero Beranda & Storyboard) -->
+              <img src="assets/hero-img.png" alt="Maskot Robot CT Game Lab" class="tentang-banner-robot">
+            </div>
+          </div>
+        </section>
+
+        <!-- GRID KONTEN UTAMA DUA KOLOM -->
+        <div class="tentang-content-grid">
+
+          <!-- KOLOM KIRI: IDENTITAS MEDIA & LEMBAGA PENYELENGGARA -->
+          <div class="tentang-col-left">
+            <article class="tentang-card" id="cardIdentitasMedia">
+              <div class="tentang-card-header">
+                <div class="tentang-card-icon-badge">
+                  <svg class="ui-icon ui-icon-md text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+                    </path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="tentang-eyebrow">IDENTITAS APLIKASI</span>
+                  <h2 class="tentang-card-title">Identitas Media</h2>
+                </div>
+              </div>
+
+              <div class="tentang-media-details">
+                <div class="detail-row">
+                  <span class="detail-label">Nama Media</span>
+                  <span class="detail-value highlight-value">CT GAME LAB</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Konsep Media</span>
+                  <span class="detail-value">Petualangan Berpikir Komputasional</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Jenis Media</span>
+                  <span class="detail-value">Media Pembelajaran Interaktif</span>
+                </div>
+                <div class="detail-desc-block">
+                  <span class="detail-label">Deskripsi:</span>
+                  <p>
+                    Media pembelajaran Informatika yang memadukan bahan bacaan, video, permainan edukatif, dan Flowchart
+                    Builder untuk membantu peserta didik memahami serta menerapkan empat fondasi berpikir komputasional.
+                  </p>
+                </div>
+              </div>
+
+              <!-- SUBBAGIAN: LEMBAGA PENYELENGGARA -->
+              <div class="tentang-sub-section">
+                <h3 class="tentang-sub-title">LEMBAGA PENYELENGGARA</h3>
+                <div class="institution-placeholders-grid">
+
+                  <!-- 1. Logo UNY -->
+                  <div class="institution-card">
+                    <div class="inst-logo-wrap">
+                      <!-- Ganti dengan file logo UNY resmi (Referensi: assets/uny-logo.png atau assets/uny-logo.jpg) -->
+                      <img src="assets/uny-logo.jpg" onerror="this.onerror=null; this.src='assets/uny-logo.png';"
+                        alt="Logo UNY" class="inst-logo-img">
+                    </div>
+                    <div class="inst-info">
+                      <span class="inst-tag">Perguruan Tinggi</span>
+                      <h4 class="inst-name">Universitas Negeri Yogyakarta</h4>
+                    </div>
+                  </div>
+
+                  <!-- 2. Logo PPG -->
+                  <div class="institution-card">
+                    <div class="inst-logo-wrap">
+                      <!-- Ganti dengan file logo PPG resmi (Referensi: assets/ppg-logo.png atau assets/ppg-logo.jpg) -->
+                      <img src="assets/ppg-logo.jpg" onerror="this.onerror=null; this.src='assets/ppg-logo.png';"
+                        alt="Logo PPG" class="inst-logo-img">
+                    </div>
+                    <div class="inst-info">
+                      <span class="inst-tag">Program Pendidikan</span>
+                      <h4 class="inst-name">Pendidikan Profesi Guru</h4>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- KOLOM KANAN: INFORMASI PEMBELAJARAN & PENGEMBANG MEDIA -->
+          <div class="tentang-col-right">
+
+            <!-- BAGIAN 3 — INFORMASI PEMBELAJARAN -->
+            <article class="tentang-card" id="info-pembelajaran">
+              <div class="tentang-card-header">
+                <div class="tentang-card-icon-badge">
+                  <svg class="ui-icon ui-icon-md text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+                    <path d="M6 6h10"></path>
+                    <path d="M6 10h10"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="tentang-eyebrow">KURIKULUM & TARGET</span>
+                  <h2 class="tentang-card-title">Informasi Pembelajaran</h2>
+                </div>
+              </div>
+
+              <div class="learning-info-table-wrap">
+                <table class="learning-info-table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Mata Pelajaran</th>
+                      <td>: Informatika</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Jenjang</th>
+                      <td>: SMA</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Kelas</th>
+                      <td>: X</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Fase</th>
+                      <td>: E</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Materi</th>
+                      <td>: Berpikir Komputasional</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <!-- BAGIAN 4 — PENGEMBANG MEDIA -->
+            <article class="tentang-card" id="cardPengembangMedia">
+              <div class="tentang-card-header">
+                <div class="tentang-card-icon-badge">
+                  <svg class="ui-icon ui-icon-md text-indigo" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <span class="tentang-eyebrow">IDENTITAS PENYUSUN</span>
+                  <h2 class="tentang-card-title">Pengembang Media</h2>
+                </div>
+              </div>
+
+              <div class="developer-profile-wrap">
+                <!-- Foto Profil Pengembang Asli Triana Elisabet Sinaga -->
+                <div class="developer-avatar-box">
+                  <img src="assets/profil.png" alt="Foto Profil Triana Elisabet Sinaga" class="developer-profile-img">
+                </div>
+
+                <div class="developer-details">
+                  <h3 class="developer-name">Triana Elisabet Sinaga</h3>
+                  <div class="developer-nim">
+                    <span class="nim-label">NIM:</span>
+                    <span class="nim-badge">25105260168</span>
+                  </div>
+                  <p class="developer-role">
+                    Pengembang Media Pembelajaran CT Game Lab.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /.tentang-col-right -->
+
+        </div><!-- /.tentang-content-grid -->
+
+      </div><!-- /.tentang-container -->
+    </div><!-- /#page-tentang -->
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER WEBSITE UTAMA (STORYBOARD PANEL 8)
+       ======================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container section-wrap">
+      <div class="footer-main-grid">
+
+        <!-- KOLOM 1 — IDENTITAS MEDIA -->
+        <div class="footer-col footer-col-brand">
+          <div class="footer-brand-header">
+            <span class="footer-brand-mark">CT</span>
+            <div>
+              <span class="footer-brand-name">CT <b>GAME LAB</b></span>
+              <span class="footer-brand-sub">Petualangan Berpikir Komputasional</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Media pembelajaran interaktif untuk membantu peserta didik memahami dan menerapkan konsep berpikir
+            komputasional.
+          </p>
+        </div>
+
+        <!-- KOLOM 2 — NAVIGASI -->
+        <div class="footer-col footer-col-nav">
+          <h4 class="footer-heading">Navigasi</h4>
+          <ul class="footer-links-list">
+            <li><a href="#beranda" data-page="beranda">Beranda</a></li>
+            <li><a href="#orientasi" data-page="orientasi">Orientasi Masalah</a></li>
+            <li><a href="#materi" data-page="materi">Materi</a></li>
+            <li><a href="#asesmen" data-page="asesmen">Asesmen</a></li>
+            <li><a href="#refleksi" data-page="refleksi">Refleksi</a></li>
+          </ul>
+        </div>
+
+        <!-- KOLOM 3 — INFORMASI -->
+        <div class="footer-col footer-col-info">
+          <h4 class="footer-heading">Informasi</h4>
+          <ul class="footer-links-list">
+            <li><a href="#tentang" data-page="tentang">Tentang Media</a></li>
+            <li><a href="#tentang" class="footer-placeholder-link" title="Panduan Penggunaan (segera hadir)">Panduan
+                Penggunaan</a></li>
+            <li><a href="#info-pembelajaran" data-scroll-to="info-pembelajaran">Informasi Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- KOLOM 4 — IKUTI KAMI -->
+        <div class="footer-col footer-col-social">
+          <h4 class="footer-heading">Ikuti Kami</h4>
+          <div class="footer-social-row">
+            <!-- YouTube Placeholder -->
+            <a href="https://www.youtube.com/@TrianaSinaga" target="_blank" rel="noopener" class="social-btn"
+              aria-label="YouTube CT Game Lab" title="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <!-- Website Placeholder -->
+            <a href="#beranda" class="social-btn" aria-label="Website CT Game Lab" title="Website Resmi">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+              </svg>
+            </a>
+            <!-- Instagram Placeholder -->
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn"
+              aria-label="Instagram CT Game Lab" title="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /.footer-main-grid -->
+
+      <!-- BAGIAN BAWAH FOOTER -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">
+          © 2026 CT Game Lab. Dikembangkan oleh Triana Elisabet Sinaga.
+        </p>
+        <div class="footer-tagline">
+          Think • Solve • Create
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       MODAL IDENTITAS SISWA (STORYBOARD PANEL 2)
+       ======================================================== -->
+  <div class="student-modal-overlay" id="studentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+    style="display: none;">
+    <div class="student-modal-card">
+
+      <!-- Visual robot pendukung (Sisi Kiri Desktop) -->
+      <div class="student-modal-visual">
+        <div class="modal-robot-badge">
+          <span class="badge-dot"></span> CT Game Lab Assistant
+        </div>
+        <div class="modal-robot-img-wrap">
+          <img src="assets/hero-img.png" alt="Maskot Robot CT Game Lab" class="modal-robot-img">
+        </div>
+        <div class="modal-visual-note">
+          <h4>Petualangan Dimulai!</h4>
+          <p>Identitasmu digunakan untuk mencatat refleksi dan karya flowchart selama belajar.</p>
+        </div>
+      </div>
+
+      <!-- Formulir Identitas (Sisi Kanan Desktop) -->
+      <div class="student-modal-form-wrap">
+        <div class="modal-brand">
+          <span class="brand-mark-mini">CT</span>
+          <div>
+            <b>CT GAME LAB</b>
+            <small>Petualangan Berpikir Komputasional</small>
+          </div>
+        </div>
+
+        <h2 id="modalTitle" class="modal-title">Kenali Dirimu Terlebih Dahulu!</h2>
+        <p class="modal-subtitle">Isi identitasmu untuk menyimpan perjalanan belajarmu di CT Game Lab.</p>
+
+        <form id="studentIdentityForm" class="student-id-form" novalidate>
+          <div class="form-group">
+            <label for="studentInputName">
+              <span class="form-icon">
+                <svg class="ui-icon ui-icon-sm text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <span>Nama Lengkap</span> <span class="required-star">*</span>
+            </label>
+            <input type="text" id="studentInputName" name="studentName" placeholder="Masukkan nama lengkap"
+              autocomplete="name" required>
+            <span class="field-error" id="nameError"></span>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="studentInputAbsen">
+                <span class="form-icon">
+                  <svg class="ui-icon ui-icon-sm text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="9" x2="20" y2="9"></line>
+                    <line x1="4" y1="15" x2="20" y2="15"></line>
+                    <line x1="10" y1="3" x2="8" y2="21"></line>
+                    <line x1="16" y1="3" x2="14" y2="21"></line>
+                  </svg>
+                </span>
+                <span>Nomor Absen</span> <span class="required-star">*</span>
+              </label>
+              <input type="number" id="studentInputAbsen" name="studentAbsen" placeholder="Contoh: 15" min="1" max="60"
+                required>
+              <span class="field-error" id="absenError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="studentInputClass">
+                <span class="form-icon">
+                  <svg class="ui-icon ui-icon-sm text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </span>
+                <span>Kelas</span> <span class="required-star">*</span>
+              </label>
+              <select id="studentInputClass" name="studentClass" required>
+                <option value="">Pilih kelas</option>
+                <option value="X-1">X-1</option>
+                <option value="X-2">X-2</option>
+                <option value="X-3">X-3</option>
+                <option value="X-4">X-4</option>
+                <option value="X-5">X-5</option>
+                <option value="X-6">X-6</option>
+              </select>
+              <span class="field-error" id="classError"></span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="saveStudentBtn" class="btn-submit-student">
+              <span>Mulai Pembelajaran</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+
+
+
+      </div>
+    </div>
+
+    <!-- Modal Konfirmasi Selesai Aktivitas (Tahap 4) -->
+    <div class="confirm-modal-overlay" id="completionConfirmModal" style="display: none;" role="dialog"
+      aria-modal="true" aria-labelledby="confirmModalTitle">
+      <div class="confirm-modal-card">
+        <div class="confirm-modal-icon" id="confirmModalIcon">
+          <svg class="ui-icon ui-icon-xl text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <h3 class="confirm-modal-title" id="confirmModalTitle">Konfirmasi Penyelesaian</h3>
+        <p class="confirm-modal-desc" id="confirmModalDesc">Apakah kamu yakin sudah membaca dan memahami materi ini?</p>
+        <div class="confirm-modal-actions">
+          <button type="button" class="btn ghost btn-cancel-confirm" id="confirmBtnCancel">Belum, Nanti Saja</button>
+          <button type="button" class="btn primary btn-yes-confirm" id="confirmBtnYes">
+            <span>Ya, Saya Sudah Selesai</span>
+            <svg class="ui-icon ui-icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
